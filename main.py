@@ -20,4 +20,9 @@ model.add(tf.keras.layers.Dense(128, activation = 'relu'))
 model.add(tf.keras.layers.Dense(10, activation = 'softmax')) # output layer; all 10 neurons add up to 1
 
 # compile model
-model.compile(optimizer = 'adam', loss='sparse_categorical_crossentropy', metrics = ['accuracy'])
+model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
+
+# train model
+model.fit(x_train, y_train, epochs = 3)
+
+model.save('handwritten.keras')
